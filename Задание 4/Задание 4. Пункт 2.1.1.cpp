@@ -1,8 +1,8 @@
-#include <iostream>
-using namespace std;
-int main()
+#include <iostream> //подключение библиотек
+using namespace std; //подключение пространства имён
+int main() //главная функция
 {
-    int i = 5;
-    cout << ++i*i++;
-    return 0;
+    int i = 5; //объявление и инициализация переменной
+    cout << ++i*i++; //результат программы
+    return 0; //завершение программы
 }
