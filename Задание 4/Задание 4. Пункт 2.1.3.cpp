@@ -1,12 +1,11 @@
-#include <iostream>
-using namespace std;
-int main()
+#include <iostream> //подключение библиотек
+using namespace std; //подключение пространства имён
+int main() //главная функция
 {
-    const int a = 10;
-    int b;
-    b = 2 * a;
-    cout << a << endl << b << endl;
-    cout << --b;
-    cin >> b;
+    const int a = 10; //объявление и инициализация константы
+    int b; // объявление переменной
+    b = 2 * a; //присвоение переменной b значения
+    cout << a << endl << b << endl; //вывод результата
+    cout << --b; //вывод результата
     return 0;
 }
