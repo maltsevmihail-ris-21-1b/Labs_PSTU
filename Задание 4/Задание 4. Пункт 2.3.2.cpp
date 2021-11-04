@@ -1,9 +1,9 @@
-#include <iostream>
-using namespace std;
-int main()
+#include <iostream> //подключение библиотек
+using namespace std; //подключение пространства имён
+int main() //гланвая функция
 {
-    char a, b, c, d, e;
-    cin >> a >> b >> c >> d >> e;
-    cout << e << " " << d << " " << c << " " << b << " " << a << endl;
+    char a, b, c, d, e; //объявление переменных
+    cin >> a >> b >> c >> d >> e; //ввод переменных
+    cout << e << " " << d << " " << c << " " << b << " " << a << endl; //вывод переменных в обратном порядке через пробел
     return 0;
 }
