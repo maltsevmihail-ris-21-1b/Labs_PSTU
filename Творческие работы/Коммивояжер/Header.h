@@ -79,7 +79,7 @@ void Graph<T>::firstGraph()
 	this->InsertEdge(1, 3, 19);
 }
 
-void podg(int***& mat, int& n, int**& help, int*& result) // подготовка данных
+void podg(int***& mat, int& n, int**& help, int*& result) // РїРѕРґРіРѕС‚РѕРІРєР° РґР°РЅРЅС‹С…
 {
 	n = amountVerts;
 
@@ -111,7 +111,7 @@ void podg(int***& mat, int& n, int**& help, int*& result) // подготовка данных
 	}
 }
 
-void solve(int*** mat, int n, int** help, int* path) // поиск оптимального пути
+void solve(int*** mat, int n, int** help, int* path) // ГЇГ®ГЁГ±ГЄ Г®ГЇГІГЁГ¬Г Г«ГјГ­Г®ГЈГ® ГЇГіГІГЁ
 {
 	for (int l = 0; l < n; l++)
 	{
@@ -179,14 +179,14 @@ void solve(int*** mat, int n, int** help, int* path) // поиск оптимального пути
 	}
 }
 
-void SolveFunc(int*** mat, int n, int** help, int* result) //вывод и сохранение решения
+void SolveFunc(int*** mat, int n, int** help, int* result) //ГўГ»ГўГ®Г¤ ГЁ Г±Г®ГµГ°Г Г­ГҐГ­ГЁГҐ Г°ГҐГёГҐГ­ГЁГї
 {
 	flag = false;
 	a = "";
 	podg(mat, n, help, result);
 	int s = 0;
 	solve(mat, n, help, result);
-	cout << endl << "Части пути: ";
+	cout << endl << "Г—Г Г±ГІГЁ ГЇГіГІГЁ: ";
 
 	for (int i = 0, j = 0; i < n; i++)
 	{
@@ -203,7 +203,7 @@ void SolveFunc(int*** mat, int n, int** help, int* result) //вывод и сохранение 
 	}
 	if (!flag)
 	{
-		cout << endl << endl << "Наименьший путь: ";
+		cout << endl << endl << "ГЌГ ГЁГ¬ГҐГ­ГјГёГЁГ© ГЇГіГІГј: ";
 		int temp = 0;
 		for (int l = 0; l < n;)
 		{
@@ -229,7 +229,7 @@ void SolveFunc(int*** mat, int n, int** help, int* result) //вывод и сохранение 
 			}
 		}
 		RES = s;
-		cout << endl << "Наименьшее расстояние: " << s;
+		cout << endl << "ГЌГ ГЁГ¬ГҐГ­ГјГёГҐГҐ Г°Г Г±Г±ГІГ®ГїГ­ГЁГҐ: " << s;
 		cout << endl;
 	}
 }
@@ -264,12 +264,12 @@ void Graph<T>::InsertVertex(const T& vertex)
 		}
 		else
 		{
-			cout << "Вершина уже существует" << endl;
+			cout << "Г‚ГҐГ°ГёГЁГ­Г  ГіГ¦ГҐ Г±ГіГ№ГҐГ±ГІГўГіГҐГІ" << endl;
 		}
 	}
 	else
 	{
-		cout << "Граф уже заполнен. Невозможно добавить новую вершину " << endl;
+		cout << "ГѓГ°Г Гґ ГіГ¦ГҐ Г§Г ГЇГ®Г«Г­ГҐГ­. ГЌГҐГўГ®Г§Г¬Г®Г¦Г­Г® Г¤Г®ГЎГ ГўГЁГІГј Г­Г®ГўГіГѕ ГўГҐГ°ГёГЁГ­Гі " << endl;
 		return;
 	}
 }
@@ -369,24 +369,24 @@ Graph<int> makeGraph()
 {
 	Graph<int> graph; 
 	int amountEdges, sourceVertex, targetVertex, edgeWeight; 
-	cout << "Введите количество вершин графа: ";
+	cout << "Г‚ГўГҐГ¤ГЁГІГҐ ГЄГ®Г«ГЁГ·ГҐГ±ГІГўГ® ГўГҐГ°ГёГЁГ­ ГЈГ°Г ГґГ : ";
 	cin >> amountVerts; cout << endl;
-	cout << "Введите количество ребер графа: "; 
+	cout << "Г‚ГўГҐГ¤ГЁГІГҐ ГЄГ®Г«ГЁГ·ГҐГ±ГІГўГ® Г°ГҐГЎГҐГ° ГЈГ°Г ГґГ : "; 
 	cin >> amountEdges; cout << endl;
 	for (int i = 1; i <= amountVerts; ++i) 
 	{
-		cout << endl << "Веришна: ";
+		cout << endl << "Г‚ГҐГ°ГЁГёГ­Г : ";
 		cin >> sourceVertex;
 		graph.InsertVertex(sourceVertex);
 	}
 	for (int i = 0; i < amountEdges; ++i) 
 	{
-		cout << endl << "Исходная вершина: "; 
+		cout << endl << "Г€Г±ГµГ®Г¤Г­Г Гї ГўГҐГ°ГёГЁГ­Г : "; 
 		cin >> sourceVertex; cout << endl;
-		cout << "Конечная вершина: "; 
+		cout << "ГЉГ®Г­ГҐГ·Г­Г Гї ГўГҐГ°ГёГЁГ­Г : "; 
 		cin >> targetVertex; cout << endl; 
 
-		cout << "Вес ребра: "; 
+		cout << "Г‚ГҐГ± Г°ГҐГЎГ°Г : "; 
 		cin >> edgeWeight; cout << endl; 
 		graph.InsertEdge(sourceVertex, targetVertex, edgeWeight);
 	}
@@ -403,7 +403,7 @@ void Graph<T>::InsertEdge(const T& vertex1, const T& vertex2, int weight)
 		int vertPos2 = GetVertPos(vertex2);
 		if (this->adjMatrix[vertPos1][vertPos2] != 0 && this->adjMatrix[vertPos2][vertPos1] != 0)
 		{
-			cout << "Ребро между вершинами уже есть" << endl;
+			cout << "ГђГҐГЎГ°Г® Г¬ГҐГ¦Г¤Гі ГўГҐГ°ГёГЁГ­Г Г¬ГЁ ГіГ¦ГҐ ГҐГ±ГІГј" << endl;
 			return;
 		}
 		else
@@ -414,7 +414,7 @@ void Graph<T>::InsertEdge(const T& vertex1, const T& vertex2, int weight)
 	}
 	else
 	{
-		cout << "Обеих вершин (или одной из них) нет в графе " << endl;
+		cout << "ГЋГЎГҐГЁГµ ГўГҐГ°ГёГЁГ­ (ГЁГ«ГЁ Г®Г¤Г­Г®Г© ГЁГ§ Г­ГЁГµ) Г­ГҐГІ Гў ГЈГ°Г ГґГҐ " << endl;
 		return;
 	}
 }
@@ -807,18 +807,18 @@ void mouseClick(int btn, int stat, int x, int y)
 			int targetVertex;
 			int edgeWeight;
 			bool f = true;
-			cout << endl << "Исходная вершина: "; 
+			cout << endl << "Г€Г±ГµГ®Г¤Г­Г Гї ГўГҐГ°ГёГЁГ­Г : "; 
 			cin >> sourceVertex; cout << endl;
-			cout << "Конечная вершина: ";
+			cout << "ГЉГ®Г­ГҐГ·Г­Г Гї ГўГҐГ°ГёГЁГ­Г : ";
 			cin >> targetVertex; cout << endl;
 			if (graph.GetVertPos(sourceVertex) == -1 || graph.GetVertPos(targetVertex) == -1)
 			{
-				cout << "Вершин нет в графе" << endl;
+				cout << "Г‚ГҐГ°ГёГЁГ­ Г­ГҐГІ Гў ГЈГ°Г ГґГҐ" << endl;
 				f = false;
 			}
 			if (f)
 			{
-				cout << "Вес ребра: "; 
+				cout << "Г‚ГҐГ± Г°ГҐГЎГ°Г : "; 
 				cin >> edgeWeight; cout << endl;
 				graph.InsertEdge(sourceVertex, targetVertex, edgeWeight);
 			}
@@ -826,19 +826,19 @@ void mouseClick(int btn, int stat, int x, int y)
 		if (x > 5 && x < 160 && y >  125 && y < 160)
 		{
 			int sourceVertex;
-			cout << "Введите вершину: "; 
+			cout << "Г‚ГўГҐГ¤ГЁГІГҐ ГўГҐГ°ГёГЁГ­Гі: "; 
 			cin >> sourceVertex; cout << endl;
 			if (graph.vertList.end() != find(graph.vertList.begin(), graph.vertList.end(), sourceVertex))
 			{
 				amountVerts--;
 				graph.DeleteVertex(sourceVertex);
 			}
-			else cout << "Такой вершины не существует \n";
+			else cout << "Г’Г ГЄГ®Г© ГўГҐГ°ГёГЁГ­Г» Г­ГҐ Г±ГіГ№ГҐГ±ГІГўГіГҐГІ \n";
 		}
 		if (x > 5 && x < 160 && y >  165 && y < 200)
 		{
 			int sourceVertex;
-			cout << endl << "Введите вершину: "; 
+			cout << endl << "Г‚ГўГҐГ¤ГЁГІГҐ ГўГҐГ°ГёГЁГ­Гі: "; 
 			cin >> sourceVertex; 
 			cout << endl;
 			if (graph.GetVertPos(sourceVertex) == -1)
@@ -848,7 +848,7 @@ void mouseClick(int btn, int stat, int x, int y)
 			}
 			else
 			{
-				cout << "Вершина " << sourceVertex << " уже содержится в графе." << endl;
+				cout << "Г‚ГҐГ°ГёГЁГ­Г  " << sourceVertex << " ГіГ¦ГҐ Г±Г®Г¤ГҐГ°Г¦ГЁГІГ±Гї Гў ГЈГ°Г ГґГҐ." << endl;
 			}
 		}
 	}
