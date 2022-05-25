@@ -111,7 +111,7 @@ void podg(int***& mat, int& n, int**& help, int*& result) // подготовк�
 	}
 }
 
-void solve(int*** mat, int n, int** help, int* path) // ïîèñê îïòèìàëüíîãî ïóòè
+void solve(int*** mat, int n, int** help, int* path) // поиск оптимального пути
 {
 	for (int l = 0; l < n; l++)
 	{
@@ -179,14 +179,14 @@ void solve(int*** mat, int n, int** help, int* path) // ïîèñê îïòèìà�
 	}
 }
 
-void SolveFunc(int*** mat, int n, int** help, int* result) //âûâîä è ñîõðàíåíèå ðåøåíèÿ
+void SolveFunc(int*** mat, int n, int** help, int* result) //вывод и сохранение решения
 {
 	flag = false;
 	a = "";
 	podg(mat, n, help, result);
 	int s = 0;
 	solve(mat, n, help, result);
-	cout << endl << "×àñòè ïóòè: ";
+	cout << endl << "Части пути: ";
 
 	for (int i = 0, j = 0; i < n; i++)
 	{
@@ -203,7 +203,7 @@ void SolveFunc(int*** mat, int n, int** help, int* result) //âûâîä è ñî�
 	}
 	if (!flag)
 	{
-		cout << endl << endl << "Íàèìåíüøèé ïóòü: ";
+		cout << endl << endl << "Наименьший путь: ";
 		int temp = 0;
 		for (int l = 0; l < n;)
 		{
@@ -229,7 +229,7 @@ void SolveFunc(int*** mat, int n, int** help, int* result) //âûâîä è ñî�
 			}
 		}
 		RES = s;
-		cout << endl << "Íàèìåíüøåå ðàññòîÿíèå: " << s;
+		cout << endl << "Наименьшее расстояние: " << s;
 		cout << endl;
 	}
 }
@@ -264,12 +264,12 @@ void Graph<T>::InsertVertex(const T& vertex)
 		}
 		else
 		{
-			cout << "Âåðøèíà óæå ñóùåñòâóåò" << endl;
+			cout << "Вершина уже существует" << endl;
 		}
 	}
 	else
 	{
-		cout << "Ãðàô óæå çàïîëíåí. Íåâîçìîæíî äîáàâèòü íîâóþ âåðøèíó " << endl;
+		cout << "Граф уже заполнен. Невозможно добавить новую вершину " << endl;
 		return;
 	}
 }
@@ -369,24 +369,24 @@ Graph<int> makeGraph()
 {
 	Graph<int> graph; 
 	int amountEdges, sourceVertex, targetVertex, edgeWeight; 
-	cout << "Ââåäèòå êîëè÷åñòâî âåðøèí ãðàôà: ";
+	cout << "Введите количество вершин графа: ";
 	cin >> amountVerts; cout << endl;
-	cout << "Ââåäèòå êîëè÷åñòâî ðåáåð ãðàôà: "; 
+	cout << "Введите количество ребер графа: "; 
 	cin >> amountEdges; cout << endl;
 	for (int i = 1; i <= amountVerts; ++i) 
 	{
-		cout << endl << "Âåðèøíà: ";
+		cout << endl << "Веришна: ";
 		cin >> sourceVertex;
 		graph.InsertVertex(sourceVertex);
 	}
 	for (int i = 0; i < amountEdges; ++i) 
 	{
-		cout << endl << "Èñõîäíàÿ âåðøèíà: "; 
+		cout << endl << "Исходная вершина: "; 
 		cin >> sourceVertex; cout << endl;
-		cout << "Êîíå÷íàÿ âåðøèíà: "; 
+		cout << "Конечная вершина: "; 
 		cin >> targetVertex; cout << endl; 
 
-		cout << "Âåñ ðåáðà: "; 
+		cout << "Вес ребра: "; 
 		cin >> edgeWeight; cout << endl; 
 		graph.InsertEdge(sourceVertex, targetVertex, edgeWeight);
 	}
@@ -403,7 +403,7 @@ void Graph<T>::InsertEdge(const T& vertex1, const T& vertex2, int weight)
 		int vertPos2 = GetVertPos(vertex2);
 		if (this->adjMatrix[vertPos1][vertPos2] != 0 && this->adjMatrix[vertPos2][vertPos1] != 0)
 		{
-			cout << "Ðåáðî ìåæäó âåðøèíàìè óæå åñòü" << endl;
+			cout << "Ребро между вершинами уже есть" << endl;
 			return;
 		}
 		else
@@ -414,7 +414,7 @@ void Graph<T>::InsertEdge(const T& vertex1, const T& vertex2, int weight)
 	}
 	else
 	{
-		cout << "Îáåèõ âåðøèí (èëè îäíîé èç íèõ) íåò â ãðàôå " << endl;
+		cout << "Обеих вершин (или одной из них) нет в графе " << endl;
 		return;
 	}
 }
@@ -807,18 +807,18 @@ void mouseClick(int btn, int stat, int x, int y)
 			int targetVertex;
 			int edgeWeight;
 			bool f = true;
-			cout << endl << "Èñõîäíàÿ âåðøèíà: "; 
+			cout << endl << "Исходная вершина: "; 
 			cin >> sourceVertex; cout << endl;
-			cout << "Êîíå÷íàÿ âåðøèíà: ";
+			cout << "Конечная вершина: ";
 			cin >> targetVertex; cout << endl;
 			if (graph.GetVertPos(sourceVertex) == -1 || graph.GetVertPos(targetVertex) == -1)
 			{
-				cout << "Âåðøèí íåò â ãðàôå" << endl;
+				cout << "Вершин нет в графе" << endl;
 				f = false;
 			}
 			if (f)
 			{
-				cout << "Âåñ ðåáðà: "; 
+				cout << "Вес ребра: "; 
 				cin >> edgeWeight; cout << endl;
 				graph.InsertEdge(sourceVertex, targetVertex, edgeWeight);
 			}
@@ -826,19 +826,19 @@ void mouseClick(int btn, int stat, int x, int y)
 		if (x > 5 && x < 160 && y >  125 && y < 160)
 		{
 			int sourceVertex;
-			cout << "Ââåäèòå âåðøèíó: "; 
+			cout << "Введите вершину: "; 
 			cin >> sourceVertex; cout << endl;
 			if (graph.vertList.end() != find(graph.vertList.begin(), graph.vertList.end(), sourceVertex))
 			{
 				amountVerts--;
 				graph.DeleteVertex(sourceVertex);
 			}
-			else cout << "Òàêîé âåðøèíû íå ñóùåñòâóåò \n";
+			else cout << "Такой вершины не существует \n";
 		}
 		if (x > 5 && x < 160 && y >  165 && y < 200)
 		{
 			int sourceVertex;
-			cout << endl << "Ââåäèòå âåðøèíó: "; 
+			cout << endl << "Введите вершину: "; 
 			cin >> sourceVertex; 
 			cout << endl;
 			if (graph.GetVertPos(sourceVertex) == -1)
@@ -848,7 +848,7 @@ void mouseClick(int btn, int stat, int x, int y)
 			}
 			else
 			{
-				cout << "Âåðøèíà " << sourceVertex << " óæå ñîäåðæèòñÿ â ãðàôå." << endl;
+				cout << "Вершина " << sourceVertex << " уже содержится в графе." << endl;
 			}
 		}
 	}
